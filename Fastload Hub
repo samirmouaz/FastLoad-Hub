@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game & App Download Center</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(90deg, #ff0066, #6600ff);
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-family: 'Press Start 2P', cursive;
+      color: #ffcc00;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Search Bar */
+    .search-container {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .search-bar {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      outline: none;
+      text-align: center;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .tab-button {
+      background: #ff0066;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .tab-button:hover, .tab-button.active {
+      background: #6600ff;
+      transform: scale(1.1);
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Game Card */
+    .card {
+      background: #161b22;
+      box-shadow: 0 4px 10px rgba(255, 0, 102, 0.3);
+      border-radius: 15px;
+      width: 300px;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 15px rgba(102, 0, 255, 0.5);
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px 0;
+      font-size: 18px;
+    }
+
+    .card button {
+      background: #ff0066;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card button:hover {
+      background: #6600ff;
+      transform: scale(1.1);
+    }
+
+    /* Countdown Text */
+    .countdown-text {
+      font-size: 14px;
+      color: #ffcc00;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Hide sections */
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>🎮 FastLoad Hub Game & App 🎮</h1>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" class="search-bar" onkeyup="searchItems()" placeholder="🔍 ابحث عن لعبة أو تطبيق...">
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="showSection('games')">Games</button>
+    <button class="tab-button" onclick="showSection('apps')">Apps</button>
+  </div>
+
+  <!-- Games Section -->
+  <div id="games" class="container section active">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEHhhI9wTU0I8OKnAG5u57cirdYcG8Jf4-tldkSeWbtEjzBIEkxwTLCv5O&s=10" alt="Minecraft">
+      <h3>Minecraft</h3>
+      <button class="download-btn" data-url="https://www.mediafire.com/file/ktvqdanpz8ohow3/minecraft.apk/file?dkey=a9167ma4l2n&r=202">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+
+    <div class="card">
+      <img src="https://traidmod.net/wp-content/uploads/2024/07/MadOut2-Logo-240x240.webp" alt="MadOut2">
+      <h3>MadOut2 مهكرة</h3>
+      <button class="download-btn" data-url="https://example.com/madout2.apk">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+
+<div class="card">
+      <img src="https://images.sftcdn.net/images/t_app-icon-m/p/eef3d2aa-96d0-11e6-b23f-00163ec9f5fa/1835415131/grand-theft-auto-san-andreas-game-unnamed.png" alt="GTA SA">
+      <h3>GTA San Andreas</h3>
+      <button class="download-btn" data-url="https://www.mediafire.com/file/5vyxf0433k6f0a9/APK.7z/file?dkey=8782by5bcjz&r=1504">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+
+    <div class="card">
+      <img src="https://traidmod.net/wp-content/uploads/2024/01/Clash-of-Clans-Logo-240x240.webp" alt="Clash of Clans">
+      <h3>Clash of Clans مهكرة</h3>
+      <button class="download-btn" data-url="https://up.apkbaba.com/games/Clash-of-Clans-16.654.13-www.Apkbaba.com.apk">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+
+    <div class="card">
+      <img src="https://traidmod.net/wp-content/uploads/2024/02/CSR-Racing-2-Logo-1-240x240.webp" alt="CSR Racing 2">
+      <h3>CSR Racing 2 مهكرة</h3>
+      <button class="download-btn" data-url="https://www.mediafire.com/file/z7d9dm366yttf5m/CSR-2-MOD_5.2.1_VEVoGame.com.zip/file?dkey=axgla5btryh&r=1858">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+  </div>
+
+  <!-- Apps Section -->
+  <div id="apps" class="container section">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNbdXJ76MqI6gc-Yvt3auX3hFfnCpF2K7rT_rmSfPB5quClnMn6deoXGWI&s=10" alt="Snapchat Plus">
+      <h3>Snapchat Plus</h3>
+      <button class="download-btn" data-url="https://www.mediafire.com/file/jsv31485pe71u9u/GoldSC_V3.10_.apk__FastLoad_Hub/file">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSksjn4G7J_M0bAvi4w0sCwfUeCBvHPxOQrbw&usqp=CAU" alt="Instagram Gold">
+      <h3>Instagram Gold</h3>
+      <button class="download-btn" data-url="https://www.mediafire.com/file/oems15m9esc97xq/InstaGold_v9.75.apk__FastLoad_Hub/file">Download</button>
+      <p class="countdown-text">⏳ انتظر <span class="countdown">10</span> ثانية...</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".download-btn").forEach(button => {
+      button.addEventListener("click", function() {
+        var downloadUrl = this.getAttribute("data-url");
+        var countdownText = this.nextElementSibling;
+        var countdownSpan = countdownText.querySelector(".countdown");
+
+        this.disabled = true; // تعطيل زر التحميل
+        countdownText.style.display = "block"; // إظهار العد التنازلي
+
+        let timeLeft = 10;
+        countdownSpan.textContent = timeLeft;
+
+        let countdownInterval = setInterval(() => {
+          timeLeft--;
+          countdownSpan.textContent = timeLeft;
+
+          if (timeLeft === 0) {
+            clearInterval(countdownInterval);
+            countdownText.textContent = "✅ التحميل بدأ...";
+            window.location.href = downloadUrl; // فتح رابط التحميل
+          }
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
+
+  
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    function searchItems() {
+      let input = document.querySelector(".search-bar").value.toLowerCase();
+      let cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        let title = card.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
